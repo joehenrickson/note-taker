@@ -4,7 +4,6 @@ const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const port = 8080;
 const mainDir = path.join(__dirname, '/public');
 
 app.use(express.static('public'));
@@ -58,6 +57,6 @@ app.delete('/api/notes/:id', function (req, res) {
   res.json(savedNotes);
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
 });
